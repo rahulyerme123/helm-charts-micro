@@ -1,15 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "faculty.fullname" . }}
-  labels:
-    {{- include "faculty.labels" . | nindent 4 }}
+  name: faculty
 spec:
   type: {{ .Values.service.type }}
+  selector:
+    app: faculty
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
+    - port: 80
+      targetPort: 8081
       protocol: TCP
       name: http
-  selector:
-    {{- include "faculty.selectorLabels" . | nindent 4 }}
