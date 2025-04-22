@@ -2,6 +2,9 @@ pipeline {
     agent {
         label 'Build-agent-2'
     } 
+     environment {
+        KUBECONFIG = credentials('aks-kubeconfig')  
+    }
 
     stages {
         stage('Deploy to AKS') {
@@ -10,7 +13,7 @@ pipeline {
                     sh '''
                         echo "Using kubeconfig from Jenkins credential..."
                         kubectl get nodes
-                        helmfile sync
+                    
                     '''
                 }
             }
