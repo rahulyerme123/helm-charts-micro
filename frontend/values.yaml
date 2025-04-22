@@ -50,12 +50,11 @@ securityContext: {}
   # runAsUser: 1000
 
 # This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/
+containerPort: 4200
 service:
-  type: LoadBalancer  # Use ClusterIP for internal, NodePort or LoadBalancer for external access
-  port: 80
-  targetPort: 80
+  port: 80           # External port for LoadBalancer
+  targetPort: 4200   # Internal container port where Angular is listening
 
-containerPort: 80
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
 ingress:
   enabled: false
