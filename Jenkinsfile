@@ -13,6 +13,8 @@ pipeline {
                     sh '''
                         echo "Using kubeconfig from Jenkins credential..."
                         kubectl get nodes
+                        echo "Deploying to AKS using Helmfile..."
+                        helmfile sync
                     
                     '''
                 }
