@@ -1,8 +1,14 @@
 releases:
   - name: frontend
+    namespace: default
     chart: ./frontend
+    values:
+      - ./frontend/values.yaml
 
   - name: faculty
+    namespace: default
     chart: ./faculty
+    values:
+      - ./faculty/values.yaml
 
   
