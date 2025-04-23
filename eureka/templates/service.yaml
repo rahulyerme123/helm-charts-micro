@@ -3,13 +3,12 @@ kind: Service
 metadata:
   name: {{ include "eureka.fullname" . }}
   labels:
-    {{- include "eureka.labels" . | nindent 4 }}
+    app: {{ include "eureka.name" . }}
 spec:
   type: {{ .Values.service.type }}
+  selector:
+    app: {{ include "eureka.name" . }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: http
+      targetPort: 8761
       protocol: TCP
-      name: http
-  selector:
-    {{- include "eureka.selectorLabels" . | nindent 4 }}
