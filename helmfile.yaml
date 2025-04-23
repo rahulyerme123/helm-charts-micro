@@ -17,4 +17,10 @@ releases:
     values:
       - ./config/values.yaml
 
+  - name: eureka
+    namespace: default
+    chart: ./eureka
+    values:
+      - ./eureka/values.yaml
+
   
