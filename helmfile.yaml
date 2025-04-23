@@ -10,5 +10,11 @@ releases:
     chart: ./faculty
     values:
       - ./faculty/values.yaml
+  
+  - name: config
+    namespace: default
+    chart: ./config
+    values:
+      - ./config/values.yaml
 
   
