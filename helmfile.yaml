@@ -2,25 +2,27 @@ releases:
   - name: frontend
     namespace: default
     chart: ./frontend
+    atomic: true
     values:
       - ./frontend/values.yaml
 
   - name: faculty
     namespace: default
     chart: ./faculty
+    atomic: true
     values:
       - ./faculty/values.yaml
-  
+
   - name: config
     namespace: default
     chart: ./config
+    atomic: true
     values:
       - ./config/values.yaml
 
   - name: eureka
     namespace: default
     chart: ./eureka
+    atomic: true
     values:
       - ./eureka/values.yaml
-
-  
