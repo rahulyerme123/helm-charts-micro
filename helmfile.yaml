@@ -26,3 +26,10 @@ releases:
     atomic: true
     values:
       - ./eureka/values.yaml
+  
+  - name: zuul
+    namespace: default
+    chart: ./zuul  
+    atomic: true
+    values:
+      - ./zuul/values.yaml 
