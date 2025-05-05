@@ -52,7 +52,7 @@ securityContext: {}
 # This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/
 containerPort: 4200
 service:
-  type: LoadBalancer       # ← Add this line
+  type: ClusterIP       # ← Add this line
   port: 80
   targetPort: 4200  # Internal container port where Angular is listening
 
